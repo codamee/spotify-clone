@@ -227,6 +227,10 @@ main .controls {
     display: flex;
     justify-content: space-between;
 }
+main .controls .name{
+    width: 30%;
+    font-weight: bold;
+}
 
 main .control-btns {
     display: flex;

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple music player">
     <title>Spotify - Web Player: Music for everyone</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -36,7 +37,7 @@
     <div class="sidebar">
         <div class="title"> 
             <p>Your Library</p>
-            <button>Play all</button>
+            <!-- <button>Play all</button> -->
         </div>
         <div class="songs-list">
         </div>
@@ -61,11 +62,14 @@
             </div>
             <div class="player">
                 <div class="controls">
-                    <div class="name">prada - guru randhawa</div>
+                    <div class="name">Last in the city - lofi girl</div>
                     <div class="control-btns">
-                        <img src="assets/previous.svg" alt="previous">
-                        <img src="assets/pause.svg" alt="pause">
-                        <img src="assets/next.svg" alt="">
+                        <img id="previous" src="assets/previous.svg" alt="previous">
+                        <img id="play" src="assets/play.svg" alt="pause">
+                        <img id="next" src="assets/next.svg" alt="next">
+                    </div>
+                    <div>
+                        
                     </div>
                     <div class="sound">
                         <img src="assets/no-volume.svg" alt="no-volume">
