@@ -1,4 +1,12 @@
 import { spotifyLibrary } from "./songs.js"
+function formatTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = Math.floor(totalSeconds % 60);
+    const paddedSeconds = seconds < 10 ? `0${seconds}` : seconds
+    return `${minutes}:${paddedSeconds}`;
+}
+
+
 function printSongList() {
     let songsList = document.querySelector(".songs-list")
     spotifyLibrary.forEach((song) => {
@@ -13,7 +21,23 @@ function printSongList() {
         <img src="assets/play.svg" alt="pause" width="20">
         `
         songsList.append(divElem)
+
     })
+    spotifyLibrary.forEach((song) => {
+        const cards=document.querySelector(".cards")
+        let divElem = document.createElement("div")
+        divElem.classList.add("card")
+        divElem.innerHTML = `
+        <div class="card">
+                <img src=${song.cover} alt="banner">
+                <div class="song-info">${song.title}</div>
+                <div class="song-name">${song.artist}</div>
+                <div class="play-btn">▶</div>
+            </div>
+        `
+        cards.append(divElem)
+    })
+
 }
 printSongList()
 
@@ -65,6 +89,14 @@ function controls() {
             console.log(spotifyLibrary[currentSong + 1]);
         }
 
+
+    })
+    currentSrc.addEventListener("timeupdate", (e) => {
+        const currentTime = formatTime(currentSrc.currentTime || "00");
+        const duration = formatTime(currentSrc.duration || "00");
+
+        document.querySelector(".time").textContent = `${currentTime}/${duration}`;
+        document.querySelector(".circle").style.translate = (currentTime / duration) * 100 + "px"
 
     })
 }
