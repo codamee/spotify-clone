@@ -80,13 +80,5 @@ export const spotifyLibrary = [
         cover: "https://picsum.photos/id/90/300/300",
         url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3"
     },
-    {
-        id: "10",
-        title: "Hard Rock Cafe",
-        artist: "The Strident",
-        album: "Electric Sky",
-        duration: "4:10",
-        cover: "https://picsum.photos/id/100/300/300",
-        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-    }
+    
 ];

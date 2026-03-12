@@ -80,7 +80,8 @@ nav .right .log-in {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
 .sidebar .title {
@@ -88,11 +89,41 @@ nav .right .log-in {
     font-size: 18px;
     font-weight: bolder;
     justify-content: space-between;
-
 }
 
 .sidebar .songs-list {
-    height: 50%;
+    height: 60vh;
+    overflow: auto;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    
+}
+
+.sidebar .sidebar-song {
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.sidebar :last-child{
+    cursor: pointer;
+}
+
+.sidebar-song div {
+    width: 60%;
+}
+
+.sidebar-song div :first-child {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.sidebar-song div :last-child {
+    font-size: 12px;
+    color: gray;
 }
 
 .sidebar .policies {
@@ -123,7 +154,7 @@ main {
     flex-direction: column;
     gap: 20px;
     height: 100%;
-    position:  relative;
+    position: relative;
 }
 
 main p {
@@ -165,13 +196,15 @@ main .card .song-name {
     font-size: 14px;
     color: rgb(218, 216, 216);
 }
-main .card .play-btn{
+
+main .card .play-btn {
     position: absolute;
     right: 10px;
     bottom: 100px;
     font-size: 30px;
 }
-main .player{
+
+main .player {
     box-sizing: border-box;
     position: absolute;
     /* color: wheat; */
@@ -185,20 +218,24 @@ main .player{
     flex-direction: column;
     gap: 20px;
 }
-main .controls{
+
+main .controls {
     display: flex;
     justify-content: space-between;
 }
-main .control-btns{
+
+main .control-btns {
     display: flex;
     gap: 20px;
 }
-main .scroll{
+
+main .scroll {
     height: 2px;
     width: 100%;
     border: 2px solid white;
 }
-main .sound{
+
+main .sound {
     display: flex;
     justify-content: center;
     align-items: center;
