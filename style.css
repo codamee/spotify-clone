@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 9fr;
+    background-color: black;
+    padding: 10px;
+    gap: 8px;
+    color: white;
+}
+
+nav {
+    grid-area: 1/1/2/span 2;
+    /* background-color: red; */
+}
+
+.sidebar {
+    background-color: #121212;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .title {
+    display: flex;
+    font-size: 18px;
+    font-weight: bolder;
+    justify-content: space-between;
+
+}
+
+.sidebar .songs-list {
+    height: 50%;
+}
+.sidebar .policies{
+    font-size: 12px;
+    color: rgb(173, 171, 171);
+    display: flex;
+    /* grid-template-columns: repeat(3,1fr); */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.sidebar>div:last-child{
+    font-size: 12px;
+    color: rgb(218, 216, 216);
+    width: fit-content;
+    padding: 10px 20px;
+    font-weight: bolder;
+    border-radius: 100px;
+    border: 1px solid rgb(215, 215, 215);
+
+}
+
+main {
+    background-image: linear-gradient(rgb(30, 30, 30), black);
+    border-radius: 8px;
+}
