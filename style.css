@@ -24,10 +24,12 @@ nav {
     padding: 10px;
 }
 
+
 nav .left {
     display: flex;
     width: 40%;
     justify-content: space-between;
+    align-items: center;
 }
 
 nav .left input {
@@ -122,36 +124,49 @@ main {
     gap: 20px;
     height: 100%;
 }
-main p{
+
+main p {
     font-size: 20px;
     font-weight: 900;
-    
+
 }
-main .cards{
+
+main .cards {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr 1fr 1fr;
     overflow: auto;
     height: 60vh;
     gap: 20px 0;
     /* height: 80%; */
 }
-main .card{
+
+main .card {
     width: 180px;
     display: flex;
     flex-direction: column;
     /* background-color: blue; */
     gap: 10px;
+    position: relative;
 }
-main .card img{
+
+main .card img {
     width: 100%;
     height: 80%;
     border-radius: 10px;
 }
-main .card .song-info{
+
+main .card .song-info {
     font-weight: bold;
 }
-main .card .song-name{
+
+main .card .song-name {
     font-size: 14px;
     color: rgb(218, 216, 216);
+}
+main .card .play-btn{
+    position: absolute;
+    right: 10px;
+    bottom: 100px;
+    font-size: 30px;
 }
