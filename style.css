@@ -7,7 +7,6 @@
 
 body {
     display: grid;
-    width: 100vw;
     height: 100vh;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 50px auto;
@@ -32,13 +31,14 @@ nav .left {
 }
 
 nav .left input {
-    font-size: 18px;
+    font-size: 15px;
     padding: 10px 20px;
-    background-color: rgb(69, 69, 69);
+    background-color: rgb(29, 29, 29);
     border: none;
     outline: none;
     border-radius: 20px;
     width: 500px;
+    font-weight: 600;
 }
 
 nav .right {
@@ -116,4 +116,42 @@ nav .right .log-in {
 main {
     background-image: linear-gradient(rgb(30, 30, 30), black);
     border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+}
+main p{
+    font-size: 20px;
+    font-weight: 900;
+    
+}
+main .cards{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    overflow: auto;
+    height: 60vh;
+    gap: 20px 0;
+    /* height: 80%; */
+}
+main .card{
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    gap: 10px;
+}
+main .card img{
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+}
+main .card .song-info{
+    font-weight: bold;
+}
+main .card .song-name{
+    font-size: 14px;
+    color: rgb(218, 216, 216);
 }
