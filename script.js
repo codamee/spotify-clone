@@ -16,3 +16,18 @@ function printSongList() {
     })
 }
 printSongList()
+
+const currentSrc = new Audio()
+function playSongs() {
+    const songList = document.querySelector(".sidebar-song")
+    spotifyLibrary.forEach((song) => {
+        songList.addEventListener("click", (e) => {
+            console.log(e.target);
+        })
+    })
+}
+playSongs()
+function playMusic(url) {
+    currentSrc.src=url
+    currentSrc.play()
+}

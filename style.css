@@ -111,9 +111,13 @@ nav .right .log-in {
     cursor: pointer;
 }
 
+.sidebar-song img:first-child{
+    border-radius: 5px;
+}
 .sidebar-song div {
     width: 60%;
 }
+
 
 .sidebar-song div :first-child {
     font-size: 13px;
