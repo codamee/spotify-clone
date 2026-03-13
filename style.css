@@ -159,7 +159,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: 100%;
+    height: 90vh;
     position: relative;
 }
 
@@ -189,7 +189,8 @@ main .card {
     cursor: pointer;
     padding: 10px;
 }
-main .card:hover{
+
+main .card:hover {
     background-color: rgba(166, 166, 168, 0.16);
 }
 
@@ -237,15 +238,17 @@ main .player {
     display: flex;
     flex-direction: column;
     gap: 20px;
+   
 }
 
 main .controls {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 main .controls .name {
-    width: 30%;
+    width: max-content;
     font-weight: bold;
 }
 
@@ -278,7 +281,7 @@ main .scroll .circle {
     border-radius: 20px;
     position: absolute;
     left: 0;
-    transition: left 0.5s ;
+    transition: left 0.5s;
 }
 
 main .sound {
@@ -288,70 +291,105 @@ main .sound {
     gap: 10px;
     cursor: pointer;
 }
-.sound input{
+
+.sound input {
     cursor: pointer;
 }
+
 /* Tablet & Mobile Layout */
-@media (max-width: 1050px) {
+@media(max-width:1400px) {
+    nav{
+        display: none;
+    }
+    .sidebar {
+        position: absolute;
+        transform: translateX(-600px);
+        transition: all 1s ease-in-out;
+    }
+
     body {
         grid-template-columns: 1fr;
-        /* Stack sidebar and main or hide sidebar */
+        grid-template-rows: 50px auto;
+    }
+    main{
+        padding: 10px;
     }
 
-    .sidebar {
-        display: none;
-        /* Spotify typically hides the sidebar on small screens */
+    main .cards {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    main .card{
+        width: 100%;
     }
 
-    nav .left input {
-        width: 300px;
-        /* Shrink search bar */
+    .player {
+        font-size: 14px;
+        z-index: 1;
+    }
+
+    .control-btns img {
+        width: 20px;
+    }
+
+    .sound {
+        gap: 0px;
+    }
+
+    .sound img {
+        width: 15px;
     }
 }
 
 /* Mobile Card Adjustment */
-@media (max-width: 700px) {
-    main {
-        padding: 15px;
+@media (max-width:1000px) {
+    main{
+        padding: 5px;
+    }
+
+    main .player {
+        /* position: fixed; */
+        width: 100%;
+        margin: 10px;
+        /* border-radius: 0px; */
+        padding: 10px 5px;
+        left: 10px;
+        width: 90%;
     }
 
     main .cards {
-        /* Use auto-fit to make cards fill the width and wrap naturally */
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(9, 1fr);
+    }
+
+    .controls {
+        flex-direction: column;
+        /* flex-wrap: wrap; */
         gap: 15px;
     }
 
-    nav .left input {
-        display: none;
-        /* Hide search input on very small screens to save space */
+    .controls .name {
+        width: 800px;
     }
 
-    nav .right .bold-words {
-        display: none;
-        /* Hide extra links */
+    .controls input {
+        height: 2px;
+        width: 60px;
     }
 
-    main .controls .name {
-        font-size: 12px;
-    }
 }
 
-/* Player Controls Responsiveness */
-@media (max-width: 500px) {
-    main .player {
-        padding: 10px;
-    }
-
-    main .controls {
-        flex-direction: column;
+@media (max-width:500px) {
+    main{
         align-items: center;
-        gap: 10px;
-    }
-
-    main .controls .name,
-    main .controls .sound {
+        /* padding: 9px; */
         width: 100%;
-        justify-content: center;
-        text-align: center;
+    }
+    main .cards {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(13, 1fr);
+    }
+    main .card{
+        width: 100%;
     }
 }

@@ -123,7 +123,6 @@ function controls() {
     document.querySelector(".sound").addEventListener("click", (e) => {
         if (e.target.id == "no-volume") {
             currentSrc.volume = currentSrc.volume == 0 ? 0.5 : 0
-            console.log(e.target);
             volume.value = currentSrc.volume !== 0 ? 50 : 0
             e.target.src = currentSrc.volume == 0 ? "./assets/mute.svg" : "./assets/no-volume.svg"
         }
