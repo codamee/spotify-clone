@@ -28,12 +28,12 @@ function printSongList() {
         let divElem = document.createElement("div")
         divElem.classList.add("card")
         divElem.innerHTML = `
-        <div class="card">
+        
                 <img src=${song.cover} alt="banner">
                 <div class="song-info">${song.title}</div>
                 <div class="song-name">${song.artist}</div>
                 <div class="play-btn">▶</div>
-            </div>
+        
         `
         cards.append(divElem)
     })
@@ -52,17 +52,23 @@ function playMusic(url) {
 
 function playSongs() {
     const songsList = document.querySelectorAll(".sidebar-song")
+    const mainList = document.querySelectorAll(".card")
     Array.from(songsList).forEach((song) => {
         song.addEventListener("click", (e) => {
             const clicked = (e.currentTarget.querySelector("div p").innerHTML);
             const findSong = spotifyLibrary.find(song => song.title === clicked)
-            console.log(findSong);
             playMusic(findSong.url)
         })
     })
-    play.addEventListener("click", (e) => {
+    Array.from(mainList).forEach((list) => {
+        list.addEventListener("click", (e) => {
+            const clicked = (e.currentTarget.querySelector(".song-info").textContent);
+            const findSong = spotifyLibrary.find(song => song.title === clicked)
+            playMusic(findSong.url)
 
+        })
     })
+
 }
 playSongs()
 function controls() {

@@ -186,6 +186,11 @@ main .card {
     /* background-color: blue; */
     gap: 10px;
     position: relative;
+    cursor: pointer;
+    padding: 10px;
+}
+main .card:hover{
+    background-color: rgba(166, 166, 168, 0.16);
 }
 
 main .card img {
@@ -205,8 +210,8 @@ main .card .song-name {
 
 main .card .play-btn {
     position: absolute;
-    right: 10px;
-    bottom: 65px;
+    right: 18px;
+    bottom: 75px;
     /* font-size: 30px; */
     background-color: rgb(1, 190, 23);
     color: black;
