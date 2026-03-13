@@ -24,7 +24,7 @@ function printSongList() {
 
     })
     spotifyLibrary.forEach((song) => {
-        const cards=document.querySelector(".cards")
+        const cards = document.querySelector(".cards")
         let divElem = document.createElement("div")
         divElem.classList.add("card")
         divElem.innerHTML = `
@@ -80,24 +80,28 @@ function controls() {
         }
         else if (e.target.id === "previous") {
             const currentSong = spotifyLibrary.findIndex(song => song.url === currentSrc.src)
-            playMusic(spotifyLibrary[currentSong - 1].url)
-            console.log(spotifyLibrary[currentSong - 1]);
+            if (currentSong + 1 >= 0) {
+                
+                playMusic(spotifyLibrary[currentSong - 1].url)
+            }
         }
         else if (e.target.id === "next") {
             const currentSong = spotifyLibrary.findIndex(song => song.url === currentSrc.src)
+
             playMusic(spotifyLibrary[currentSong + 1].url)
-            console.log(spotifyLibrary[currentSong + 1]);
         }
-
-
     })
     currentSrc.addEventListener("timeupdate", (e) => {
         const currentTime = formatTime(currentSrc.currentTime || "00");
         const duration = formatTime(currentSrc.duration || "00");
-
         document.querySelector(".time").textContent = `${currentTime}/${duration}`;
-        document.querySelector(".circle").style.translate = (currentTime / duration) * 100 + "px"
+        document.querySelector(".circle").style.left = ((currentSrc.currentTime / currentSrc.duration) * 100) + "%";
+    })
 
+    document.querySelector(".scroll").addEventListener("click", (e) => {
+        const percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100
+        document.querySelector(".circle").style.left = percent + "%"
+        currentSrc.currentTime = (currentSrc.duration * percent) / 100
     })
 }
 controls()
