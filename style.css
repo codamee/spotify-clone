@@ -24,6 +24,10 @@ nav {
     padding: 10px;
 }
 
+nav .menu {
+    display: none;
+}
+
 
 nav .left {
     display: flex;
@@ -106,6 +110,10 @@ nav .right .log-in {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.sidebar .sidebar-song div:hover {
+    background-color: gray;
 }
 
 .sidebar :last-child {
@@ -238,7 +246,7 @@ main .player {
     display: flex;
     flex-direction: column;
     gap: 20px;
-   
+
 }
 
 main .controls {
@@ -298,20 +306,44 @@ main .sound {
 
 /* Tablet & Mobile Layout */
 @media(max-width:1400px) {
-    nav{
+    nav .menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav .left {
         display: none;
     }
+
+    nav .right .bold-words,
+    .left,
+    .line,
+    .install {
+        display: none;
+    }
+
+    nav .right {
+        justify-content: space-around;
+        width: 20%;
+
+    }
+
     .sidebar {
         position: absolute;
         transform: translateX(-600px);
+        top: 65px;
         transition: all 1s ease-in-out;
+        z-index: 10;
+        opacity: 0.8;
+        backdrop-filter: blur(20px);
     }
 
     body {
         grid-template-columns: 1fr;
         grid-template-rows: 50px auto;
     }
-    main{
+
+    main {
         padding: 10px;
     }
 
@@ -319,7 +351,8 @@ main .sound {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: repeat(3, 1fr);
     }
-    main .card{
+
+    main .card {
         width: 100%;
     }
 
@@ -343,7 +376,8 @@ main .sound {
 
 /* Mobile Card Adjustment */
 @media (max-width:1000px) {
-    main{
+
+    main {
         padding: 5px;
     }
 
@@ -380,16 +414,35 @@ main .sound {
 }
 
 @media (max-width:500px) {
-    main{
+    main {
         align-items: center;
         /* padding: 9px; */
         width: 100%;
     }
+
     main .cards {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(13, 1fr);
     }
-    main .card{
+
+    main .card {
         width: 100%;
+    }
+
+    nav .right {
+        width: 50%;
+    }
+
+    .sidebar {
+        width: 80%;
+    }
+
+    .sidebar .policies,
+    .lang {
+        display: none;
+    }
+
+    .sidebar .sidebar-song {
+        height: 10%;
     }
 }

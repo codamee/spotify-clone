@@ -37,6 +37,14 @@ function printSongList() {
         `
         cards.append(divElem)
     })
+    document.querySelector(".menu").addEventListener("click", () => {
+        const sidebar = document.querySelector(".sidebar");
+        if (sidebar.style.transform === "translateX(0px)") {
+            sidebar.style.transform = "translateX(-600px)";
+        } else {
+            sidebar.style.transform = "translateX(0px)";
+        }
+    });
 
 }
 printSongList()
