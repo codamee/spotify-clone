@@ -417,6 +417,9 @@ main .sound {
 }
 
 @media (max-width:500px) {
+    nav .right{
+        width: 60%;
+    }
     main .player {
         bottom: 20px;
     }
@@ -435,8 +438,6 @@ main .sound {
     main .card {
         width: 100%;
     }
-
-
 
     .sidebar {
         width: 80%;
