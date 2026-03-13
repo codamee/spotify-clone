@@ -325,7 +325,6 @@ main .sound {
     nav .right {
         justify-content: space-around;
         width: 20%;
-
     }
 
     .sidebar {
@@ -334,7 +333,8 @@ main .sound {
         top: 65px;
         transition: all 1s ease-in-out;
         z-index: 10;
-        opacity: 0.8;
+        /* opacity: 0.8; */
+        background-color: rgba(0, 0, 0, 0.499);
         backdrop-filter: blur(20px);
     }
 
@@ -376,6 +376,9 @@ main .sound {
 
 /* Mobile Card Adjustment */
 @media (max-width:1000px) {
+    nav .right {
+        width: 50%;
+    }
 
     main {
         padding: 5px;
@@ -414,9 +417,10 @@ main .sound {
 }
 
 @media (max-width:500px) {
-    main .player{
+    main .player {
         bottom: 20px;
     }
+
     main {
         align-items: center;
         /* padding: 9px; */
@@ -432,9 +436,7 @@ main .sound {
         width: 100%;
     }
 
-    nav .right {
-        width: 50%;
-    }
+
 
     .sidebar {
         width: 80%;
