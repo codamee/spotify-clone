@@ -251,6 +251,7 @@ main .controls .name {
 main .control-btns {
     display: flex;
     gap: 20px;
+    cursor: pointer;
 }
 
 main .scroll {
@@ -280,6 +281,10 @@ main .sound {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
+}
+.sound input{
+    cursor: pointer;
 }
 /* Tablet & Mobile Layout */
 @media (max-width: 1050px) {
