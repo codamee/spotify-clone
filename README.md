@@ -1,6 +1,7 @@
 # 🎵 Spotify Clone - Web Player
 
 A fully responsive Spotify clone built with Vanilla JavaScript, CSS Grid, and HTML5 Audio. This project features dynamic song rendering, a custom-built music player, and a mobile-friendly navigation system.
+
 ---
 
 ## 📸 Screenshots
