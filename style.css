@@ -414,6 +414,9 @@ main .sound {
 }
 
 @media (max-width:500px) {
+    main .player{
+        bottom: 20px;
+    }
     main {
         align-items: center;
         /* padding: 9px; */
